@@ -3,10 +3,10 @@ title: Grading Contract
 date: "`r format(Sys.time(), '%B %d %Y')`"
 output: github_document
 params:
-  weekonemonday: "2023-01-09"
+  weekonemonday: "2026-01-12"
   thesisdeadline: "2023-01-10"
-  springbreak: "2023-01-10"
-  name: Tukey Cat
+  springbreak: "2026-03-10"
+  name: Holland Sun
   labs: 11
   portfolios: 10
   grade:
@@ -27,6 +27,8 @@ params:
     - Wednesday
     - Thursday
     - Friday
+    - Sunday
+    - Saturday
 ---
 
 ```{r setup, include=FALSE}
@@ -96,6 +98,14 @@ advdate <- function(weekonemonday,
                  "mon")) {
       tmp <- paste0(tmon)
     }
+    else if (assignment %in%
+               c("saturday", 
+                 "Saturday", 
+                 "sat", 
+                 "Sat",
+                 "s")) {
+      tmp <- paste0(tsat)
+    }
   } else{
     tmp <- paste0(unit, zadv, ", ", tmon, " - ", tfri, " : ", topic[week])
   }
@@ -122,18 +132,18 @@ topic = c(
   "Data and Visualization",
   "Grammar of data wrangling",
   "Data types and Data Transformations",
-  "Tips for effective data visualization",
-  "Scientific studies and confounding",
-  #  "Spring Break",#  "",
+  "Confounding and Communication",
   "Web scraping",
+  #  "Spring Break",#  "",
   "Functions",
   "Data and Ethics",
-  "Fitting and interpreting models",
-  "Prediction and overfitting",
-  "Cross validation",
+  "Modeling the tidy way",
+  "overfitting and the Cross validation",
   "Quantifying uncertainty",
+  "Large Language Models",
   "Interactive web apps",
-  "Special Topics"
+  "Reproducible reports",
+  "Machine Learning"
 )
 
 ```
